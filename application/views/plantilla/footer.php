@@ -44,19 +44,34 @@
     </div>
   </footer>
     <!--   Core JS Files   -->
-    <script src="./assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <script src="./assets/js/core/popper.min.js" type="text/javascript"></script>
-  <script src="./assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-  <script src="./assets/js/plugins/moment.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="<?php echo base_url();?>assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="<?php echo base_url();?>assets/js/plugins/moment.min.js"></script>
    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
-   <script src="./assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+   <script src="<?php echo base_url();?>assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+   <script src="<?php echo base_url();?>assets/js/lottie.js" type="text/javascript"></script>
   <script>
+  function CrearLottie(element, archivo)
+  {
+    for (let index = 0; index < element.length; index++) {
+      lottie.loadAnimation({
+  container: element[index], // the dom element that will contain the animation
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: archivo // the path to the animation json
+});
+      
+    }
+     //lottie
+    
+  }
   $(document).ready(function() {
       //init DateTimePickers
-      materialKit.initFormExtendedDatetimepickers();
-
+     // materialKit.initFormExtendedDatetimepickers();
       // Sliders Init
-      materialKit.initSliders();
+     // materialKit.initSliders();
+     CrearLottie($('.logoanimate'),'<?php echo base_url();?>assets/Json/cycle_animation.json');
     });
   </script>
 </body>

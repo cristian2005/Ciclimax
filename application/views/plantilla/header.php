@@ -18,14 +18,19 @@
   <link href="<?php echo base_url();?>assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?php echo base_url();?>assets/demo/demo.css" rel="stylesheet" />
+
+    <script src="<?php echo base_url();?>assets/js/core/jquery.min.js" type="text/javascript"></script>
+
 </head>
 
 <body class="index-page sidebar-collapse">
   <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div class="container">
     <div class="navbar-translate">
-        <a class="navbar-brand" href=".">
-        Ciclimax </a>
+        <a class="navbar-brand"  href="." style="width:40px; ">
+       <span style="position:relative; top:-10px;">Ciclimax</span>
+       <span  class="logoanimate"></span>
+         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
           <span class="navbar-toggler-icon"></span>
@@ -64,7 +69,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="" data-toggle="modal" data-target="#myModal" data-original-title="Inicia sesi&oacute;n para publicar tu anuncio">
+            <a class="nav-link" rel="tooltip" title="" onclick="scrollToIniciarSesion();" data-placement="bottom" href="" data-toggle="modal" data-target="#myModal" data-original-title="Inicia sesi&oacute;n para publicar tu anuncio">
               Login
             </a>
           </li>
@@ -77,7 +82,7 @@
       </div>
     </div>
   </nav>
-  <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('assets/img/bici2.jpg');">
+  <div class="page-header header-filter clear-filter purple-filter " data-parallax="true"  style="background-image: url('assets/img/bici2.jpg');">
   <div class="container">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">

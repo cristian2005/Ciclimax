@@ -1,4 +1,4 @@
-<div class="section section-signup page-header" style="background-image: url('./assets/img/bike3.jpg');">
+<div class="section section-signup page-header" style="background-image: url('./assets/img/bici1.jpg');">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-6 ml-auto mr-auto">
@@ -46,7 +46,7 @@
                   </div>
                 </div>
                 <div class="footer text-center">
-                  <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Get Started</a>
+                  <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Iniciar Sesi&oacute;n</a>
                 </div>
               </form>
             </div>
@@ -54,4 +54,16 @@
         </div>
       </div>
     </div>
+    
+
+    <script>
+    function scrollToIniciarSesion() {
+      if ($('.section-signup').length != 0) {
+        $("html, body").animate({
+          scrollTop: $('.section-signup').offset().top
+        }, 1000);
+      }
+    }
+    
+    </script>
     
