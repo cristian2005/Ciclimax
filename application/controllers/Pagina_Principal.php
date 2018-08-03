@@ -6,6 +6,11 @@ class Pagina_Principal extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Pagina_PrincipalModels');
+		if(session_status()==PHP_SESSION_NONE)
+		{
+		session_start();
+		}
 	}
 	
 	public function index()
@@ -13,5 +18,27 @@ class Pagina_Principal extends CI_Controller {
 		$this->load->view('plantilla/header');
 		$this->load->view('Pagina_Principal');
 		$this->load->view('plantilla/footer');
+	}
+	public function login()
+	{
+		extract($_POST);
+		$this->Pagina_PrincipalModels->IniciarSesion($email,$clave);
+		exit();
+	}
+	public function Registro()
+	{
+		if(isset($_POST["Correo"]))
+		{
+			$this->Pagina_PrincipalModels->Registro();
+			exit();
+		}
+		$this->load->view('plantilla/header');
+		$this->load->view('registro');
+		$this->load->view('plantilla/footer');
+	}
+	public function Cerrar_Sesion()
+	{
+      session_destroy();
+      echo "<script>window.location='".base_url('Pagina_Principal')."';</script>";
 	}
 }

@@ -1,6 +1,31 @@
 </div>
     </div>
     </div>
+
+<!--Modal Anuncios-->
+<div class="modal" id='modalanuncio' tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Cierre Modal Anuncios-->
+
+
+
 <footer class="footer" data-background-color="black">
     <div class="container">
       <nav class="float-left">
@@ -67,12 +92,57 @@
     
   }
   $(document).ready(function() {
+    $('#aregistro').click(function(){
+      Mover_Bici_menu(2500,"910px","<?php echo base_url('Pagina_Principal/Registro#registrarse');?>");
+    });
       //init DateTimePickers
      // materialKit.initFormExtendedDatetimepickers();
       // Sliders Init
      // materialKit.initSliders();
-     CrearLottie($('.logoanimate'),'<?php echo base_url();?>assets/Json/cycle_animation.json');
+     CrearLottie($('.logoanimate'),'<?php echo base_url();?>assets/json/cycle_animation.json');
     });
   </script>
+    <script>
+
+    function scrollToIniciarSesion() {
+      if ($('.section-signup').length != 0) {
+        Mover_Bici_menu(2500,"810px","<?php echo base_url('.#contener-login');?>");
+        $("html, body").animate({
+          scrollTop: $('.section-signup').offset().top
+        }, 1000);
+      }
+    }
+    function Mover_Bici_menu(interval,left,action)
+    {
+      $('.logoanimate').animate({
+      left: left
+    }, interval,function(){href(action);});
+    }
+    function href (url)
+     {
+       if(url!=null)
+       {
+         window.location=url;
+       }
+     }
+     function SubirAnuncios()
+     {
+      Mover_Bici_menu(2500,"1040px",null);
+      <?php
+      if(!isset($_SESSION["Apodo"]))
+      {
+        echo "setTimeout('scrollToIniciarSesion()',2500);";
+      }
+      else
+      {
+        echo "setTimeout('mostrarmodalanuncio()',2500);";
+      }
+      ?>
+     }
+    function mostrarmodalanuncio()
+     {
+      $('#modalanuncio').modal('show');
+     }
+    </script>
 </body>
 </html>
